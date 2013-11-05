@@ -6,13 +6,27 @@ Calculator:
     orientation: 'vertical'
     spacing: '5dp'
     display: id_display
+    info: id_info
+
+    size: ('100dp', '300dp')
 
     Label:
         font_size: '50dp'
+        text_size: (self.width * 0.9, self.height * 0.9)
+        size: (root.width, root.height * 0.22)
+        halign: 'right'
         text: '0'
         id: id_display
 
+    Label:
+        font_size: '12dp'
+        text_size: (self.width * 0.9, self.height * 0.9)
+        size: (root.width, root.height * 0.15)
+        halign: 'right'
+        id: id_info
+
     GridLayout:
+        size: (root.width, root.height * 0.6)
         rows:   6
         cols: 4
 
@@ -78,6 +92,7 @@ Calculator:
 
         Button:
             text: '+'
+#            size_hint_y: 100/6*2
             on_press: root.append('+')
 
         Button:
